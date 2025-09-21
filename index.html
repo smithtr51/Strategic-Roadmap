@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CohnReznick IT Strategy Roadmap FY 2026-2028</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: #0f172a;
+            background-color: #ffffff;
+        }
+
+        .container {
+            max-width: 80rem;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .mb-4 { margin-bottom: 1rem; }
+        .mb-6 { margin-bottom: 1.5rem; }
+        .mb-8 { margin-bottom: 2rem; }
+        .mb-12 { margin-bottom: 3rem; }
+        .mb-16 { margin-bottom: 4rem; }
+        .mt-24 { margin-top: 6rem; }
+
+        .p-3 { padding: 0.75rem; }
+        .px-4 { padding-left: 1rem; padding-right: 1rem; }
+        .py-8 { padding-top: 2rem; padding-bottom: 2rem; }
+
+        .flex {
+            display: flex;
+        }
+
+        .flex-row { flex-direction: row; }
+        .items-center { align-items: center; }
+        .justify-center { justify-content: center; }
+        .justify-between { justify-content: space-between; }
+        .gap-3 { gap: 0.75rem; }
+        .gap-4 { gap: 1rem; }
+        .gap-6 { gap: 1.5rem; }
+
+        .grid {
+            display: grid;
+        }
+
+        .grid-cols-2 {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .grid-cols-3 {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .grid-cols-4 {
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        @media (min-width: 768px) {
+            .md\\:grid-cols-2 { grid-template-columns: repeat(2, 1fr); }
+            .md\\:grid-cols-4 { grid-template-columns: repeat(4, 1fr); }
+        }
+
+        @media (min-width: 1024px) {
+            .lg\\:grid-cols-3 { grid-template-columns: repeat(3, 1fr); }
+        }
+
+        .space-y-20 > * + * {
+            margin-top: 5rem;
+        }
+
+        .space-y-6 > * + * {
+            margin-top: 1.5rem;
+        }
+
+        .space-y-4 > * + * {
+            margin-top: 1rem;
+        }
+
+        h1 {
+            font-size: 2.25rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.025em;
+        }
+
+        h2 {
+            font-size: 1.875rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.025em;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .text-muted-foreground {
+            color: #64748b;
+        }
+
+        .text-green-600 { color: #16a34a; }
+        .text-blue-600 { color: #2563eb; }
+        .text-orange-600 { color: #ea580c; }
+
+        .bg-primary\\/10 {
+            background-color: rgba(59, 130, 246, 0.1);
+        }
+
+        .text-primary {
+            color: #3b82f6;
+        }
+
+        .rounded-full {
+            border-radius: 9999px;
+        }
+
+        .max-w-2xl {
+            max-width: 42rem;
+        }
+
+        .mx-auto {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Card Styles */
+        .card {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 0.5rem;
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .card-header {
+            padding: 1.5rem 1.5rem 0.5rem 1.5rem;
+        }
+
+        .card-content {
+            padding: 0 1.5rem 1.5rem 1.5rem;
+        }
+
+        .card-title {
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: #0f172a;
+        }
+
+        .text-2xl {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .text-xs {
+            font-size: 0.75rem;
+        }
+
+        .text-sm {
+            font-size: 0.875rem;
+        }
+
+        /* Separator */
+        .separator {
+            height: 1px;
+            background: #e2e8f0;
+            border: none;
+            flex: 1;
+        }
+
+        /* Badge Styles */
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            border-radius: 0.375rem;
+            padding: 0.125rem 0.625rem;
+            font-size: 0.75rem;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        .badge-planned {
+            background: #dbeafe;
+            color: #1e40af;
+        }
+
+        .badge-upcoming {
+            background: #fef3c7;
+            color: #92400e;
+        }
+
+        /* Year Section */
+        .year-section {
+            margin-bottom: 3rem;
+        }
+
+        .year-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            border-radius: 1rem;
+            border: 1px solid #e2e8f0;
+        }
+
+        .year-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #1e40af;
+            margin-bottom: 0.5rem;
+        }
+
+        .year-subtitle {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #334155;
+            margin-bottom: 1rem;
+        }
+
+        .year-description {
+            color: #64748b;
+            max-width: 48rem;
+            margin: 0 auto;
+        }
+
+        /* Quarter Section */
+        .quarter-section {
+            margin-bottom: 2rem;
+        }
+
+        .quarter-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            padding: 1rem 1.5rem;
+            background: #f8fafc;
+            border-radius: 0.5rem;
+            border-left: 4px solid #3b82f6;
+        }
+
+        .quarter-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #1e293b;
+        }
+
+        .quarter-items {
+            display: grid;
+            gap: 1rem;
+            grid-template-columns: 1fr;
+        }
+
+        @media (min-width: 768px) {
+            .quarter-items {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .quarter-items {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        /* Roadmap Item */
+        .roadmap-item {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+        }
+
+        .roadmap-item:hover {
+            border-color: #3b82f6;
+            box-shadow: 0 4px 12px 0 rgba(59, 130, 246, 0.15);
+            transform: translateY(-2px);
+        }
+
+        .roadmap-item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 0.75rem;
+        }
+
+        .roadmap-item-title {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 0.5rem;
+        }
+
+        .roadmap-item-description {
+            color: #64748b;
+            font-size: 0.875rem;
+            line-height: 1.5;
+            margin-bottom: 1rem;
+        }
+
+        .roadmap-item-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.75rem;
+            color: #64748b;
+        }
+
+        /* Milestone */
+        .milestone {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .milestone:hover {
+            border-color: #16a34a;
+            box-shadow: 0 4px 12px 0 rgba(22, 163, 74, 0.15);
+        }
+
+        .milestone-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .milestone-icon {
+            width: 2rem;
+            height: 2rem;
+            border-radius: 50%;
+            background: #dcfce7;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .milestone-title {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: #1e293b;
+        }
+
+        .milestone-description {
+            color: #64748b;
+            margin-bottom: 1rem;
+            line-height: 1.5;
+        }
+
+        .milestone-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.875rem;
+        }
+
+        .milestone-quarter {
+            background: #f0f9ff;
+            color: #0369a1;
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.375rem;
+            font-weight: 500;
+        }
+
+        .icon {
+            width: 1rem;
+            height: 1rem;
+            display: inline-block;
+        }
+
+        .icon-lg {
+            width: 2rem;
+            height: 2rem;
+            display: inline-block;
+        }
+
+        /* SVG Icon Styles */
+        .icon svg, .icon-lg svg {
+            width: 100%;
+            height: 100%;
+            fill: currentColor;
+        }
+
+        .footer-text {
+            margin-top: 6rem;
+            text-align: center;
+            color: #64748b;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="text-center mb-12">
+            <div class="flex justify-center mb-4">
+                <div class="p-3 bg-primary/10 rounded-full">
+                    <div class="icon-lg text-primary">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/>
+                            <path d="M6 12H4a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h2"/>
+                            <path d="M18 9h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2"/>
+                            <path d="M10 6h4"/>
+                            <path d="M10 10h4"/>
+                            <path d="M10 14h4"/>
+                            <path d="M10 18h4"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <h1>CohnReznick IT Strategy Roadmap FY 2026-2028</h1>
+            <p class="text-muted-foreground max-w-2xl mx-auto">
+                Three-year technology transformation strategy aligned with Apax Funds investment. Driving sustained growth through 
+                digital innovation, AI-powered automation, and industry-leading client experiences across professional services.
+            </p>
+        </div>
+
+        <!-- Three-Year Investment Overview -->
+        <div class="grid gap-4 md:grid-cols-4 mb-12">
+            <div class="card">
+                <div class="card-header flex flex-row items-center justify-between">
+                    <div class="card-title">Total Initiatives</div>
+                    <div class="icon text-muted-foreground">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="22,7 13.5,15.5 8.5,10.5 2,17"/>
+                            <polyline points="16,7 22,7 22,13"/>
+                        </svg>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="text-2xl">36</div>
+                    <p class="text-xs text-muted-foreground">Across 3 fiscal years</p>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-header flex flex-row items-center justify-between">
+                    <div class="card-title">Innovation Projects</div>
+                    <div class="icon text-muted-foreground">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect width="18" height="18" x="3" y="4" rx="2" ry="2"/>
+                            <line x1="16" x2="16" y1="2" y2="6"/>
+                            <line x1="8" x2="8" y1="2" y2="6"/>
+                            <line x1="3" x2="21" y1="10" y2="10"/>
+                        </svg>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="text-2xl text-green-600">12</div>
+                    <p class="text-xs text-muted-foreground">AI & emerging tech</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header flex flex-row items-center justify-between">
+                    <div class="card-title">Automation Focus</div>
+                    <div class="icon text-muted-foreground">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="m13.5 6 7.5 3v4L12 18l-9-4.5v-4Z"/>
+                            <path d="M12 13 4.5 9"/>
+                            <path d="M12 13v9"/>
+                        </svg>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="text-2xl text-blue-600">8</div>
+                    <p class="text-xs text-muted-foreground">Process improvements</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header flex flex-row items-center justify-between">
+                    <div class="card-title">Investment Horizon</div>
+                    <div class="icon text-muted-foreground">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect width="18" height="18" x="3" y="4" rx="2" ry="2"/>
+                            <line x1="16" x2="16" y1="2" y2="6"/>
+                            <line x1="8" x2="8" y1="2" y2="6"/>
+                            <line x1="3" x2="21" y1="10" y2="10"/>
+                        </svg>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="text-2xl text-orange-600">36M</div>
+                    <p class="text-xs text-muted-foreground">Strategic timeline</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Strategic Milestones -->
+        <section class="mb-16">
+            <div class="flex items-center gap-3 mb-8">
+                <h2>Three-Year Strategic Milestones</h2>
+                <hr class="separator">
+            </div>
+            <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3" id="milestones-container">
+                <!-- Milestones will be populated by JavaScript -->
+            </div>
+        </section>
+
+        <!-- Three-Year Roadmap -->
+        <div class="space-y-20" id="roadmap-container">
+            <!-- Roadmap sections will be populated by JavaScript -->
+        </div>
+
+        <!-- Footer -->
+        <div class="footer-text">
+            <hr class="separator mb-6">
+            <p class="text-sm">
+                This three-year strategy roadmap aligns with CohnReznick's Apax Funds investment objectives and growth targets. 
+                Executive steering committee reviews progress quarterly with annual strategic plan updates. Last updated: September 2025
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // SVG Icons
+        const icons = {
+            calendar: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>',
+            target: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>'
+        };
+
+        // Data
+        const roadmapData = {
+            fy2026: {
+                q1: [
+                    {
+                        title: "Client Portal 3.0 Launch",
+                        description: "Next-generation client portal with real-time collaboration and mobile-first experience",
+                        status: "planned",
+                        category: "Client Experience",
+                        date: "Oct 15"
+                    },
+                    {
+                        title: "Cloud Infrastructure Expansion",
+                        description: "Multi-cloud architecture supporting 100% growth capacity with disaster recovery",
+                        status: "planned",
+                        category: "Infrastructure",
+                        date: "Nov 30"
+                    },
+                    {
+                        title: "Zero Trust Security Implementation",
+                        description: "Advanced identity management and zero trust architecture deployment",
+                        status: "planned",
+                        category: "Security",
+                        date: "Dec 20"
+                    }
+                ],
+                q2: [
+                    {
+                        title: "Audit Automation Suite",
+                        description: "AI-powered audit procedures reducing manual work by 60%",
+                        status: "planned",
+                        category: "Automation",
+                        date: "Jan 31"
+                    },
+                    {
+                        title: "Advanced Analytics Platform",
+                        description: "Real-time business intelligence and predictive analytics for client insights",
+                        status: "planned",
+                        category: "Analytics",
+                        date: "Feb 28"
+                    },
+                    {
+                        title: "Tax Technology Overhaul",
+                        description: "Cloud-native tax preparation and compliance management system",
+                        status: "planned",
+                        category: "Tax Technology",
+                        date: "Mar 15"
+                    }
+                ],
+                q3: [
+                    {
+                        title: "Knowledge Management AI",
+                        description: "AI-enhanced knowledge base with natural language queries and auto-updates",
+                        status: "planned",
+                        category: "Knowledge Management",
+                        date: "Apr 30"
+                    },
+                    {
+                        title: "Workflow Automation Engine",
+                        description: "Robotic process automation for routine accounting and compliance tasks",
+                        status: "planned",
+                        category: "Automation",
+                        date: "May 31"
+                    },
+                    {
+                        title: "Client Risk Analytics",
+                        description: "Machine learning models for client risk assessment and opportunity identification",
+                        status: "planned",
+                        category: "Analytics",
+                        date: "Jun 15"
+                    }
+                ],
+                q4: [
+                    {
+                        title: "Digital Advisory Platform",
+                        description: "Integrated platform for delivering scalable digital advisory services",
+                        status: "planned",
+                        category: "Advisory Services",
+                        date: "Jul 31"
+                    },
+                    {
+                        title: "Regulatory Compliance Hub",
+                        description: "Automated compliance monitoring across all service lines with real-time alerts",
+                        status: "planned",
+                        category: "Compliance",
+                        date: "Aug 30"
+                    },
+                    {
+                        title: "Data Lake Foundation",
+                        description: "Enterprise data lake for advanced analytics and machine learning capabilities",
+                        status: "planned",
+                        category: "Data Management",
+                        date: "Sep 15"
+                    }
+                ]
+            },
+            fy2027: {
+                q1: [
+                    {
+                        title: "AI-Powered Financial Analysis",
+                        description: "Advanced machine learning for financial statement analysis and anomaly detection",
+                        status: "planned",
+                        category: "AI/ML",
+                        date: "Oct 15"
+                    },
+                    {
+                        title: "Blockchain Integration",
+                        description: "Blockchain technology for audit trails and transaction verification",
+                        status: "planned",
+                        category: "Innovation",
+                        date: "Nov 30"
+                    },
+                    {
+                        title: "Mobile-First Client Apps",
+                        description: "Native mobile applications for iOS and Android client engagement",
+                        status: "planned",
+                        category: "Client Experience",
+                        date: "Dec 20"
+                    }
+                ],
+                q2: [
+                    {
+                        title: "Predictive Business Intelligence",
+                        description: "Predictive models for market trends and client business forecasting",
+                        status: "planned",
+                        category: "Analytics",
+                        date: "Jan 31"
+                    },
+                    {
+                        title: "Advanced Cybersecurity Suite",
+                        description: "AI-driven threat detection and automated incident response systems",
+                        status: "planned",
+                        category: "Security",
+                        date: "Feb 28"
+                    },
+                    {
+                        title: "Integration Hub",
+                        description: "API-first integration platform connecting all business systems",
+                        status: "planned",
+                        category: "Integration",
+                        date: "Mar 15"
+                    }
+                ],
+                q3: [
+                    {
+                        title: "Natural Language Processing",
+                        description: "NLP capabilities for document analysis and contract review automation",
+                        status: "planned",
+                        category: "AI/ML",
+                        date: "Apr 30"
+                    },
+                    {
+                        title: "Edge Computing Network",
+                        description: "Edge computing infrastructure for low-latency client services",
+                        status: "planned",
+                        category: "Infrastructure",
+                        date: "May 31"
+                    },
+                    {
+                        title: "Advanced Reporting Engine",
+                        description: "Dynamic, interactive reporting with real-time data visualization",
+                        status: "planned",
+                        category: "Analytics",
+                        date: "Jun 15"
+                    }
+                ],
+                q4: [
+                    {
+                        title: "Quantum-Ready Infrastructure",
+                        description: "Quantum-resistant cryptography and future-ready security architecture",
+                        status: "planned",
+                        category: "Security",
+                        date: "Jul 31"
+                    },
+                    {
+                        title: "Automated Advisory Services",
+                        description: "AI-driven advisory recommendations and automated service delivery",
+                        status: "planned",
+                        category: "Advisory Services",
+                        date: "Aug 30"
+                    },
+                    {
+                        title: "Global Collaboration Platform",
+                        description: "Unified platform for global team collaboration and knowledge sharing",
+                        status: "planned",
+                        category: "Collaboration",
+                        date: "Sep 15"
+                    }
+                ]
+            },
+            fy2028: {
+                q1: [
+                    {
+                        title: "Generative AI Advisory",
+                        description: "GPT-powered advisory services and automated client communications",
+                        status: "planned",
+                        category: "AI/ML",
+                        date: "Oct 15"
+                    },
+                    {
+                        title: "Metaverse Client Meetings",
+                        description: "Virtual reality meeting spaces for immersive client interactions",
+                        status: "planned",
+                        category: "Innovation",
+                        date: "Nov 30"
+                    },
+                    {
+                        title: "Sustainability Analytics",
+                        description: "ESG reporting and sustainability metrics analytics platform",
+                        status: "planned",
+                        category: "Analytics",
+                        date: "Dec 20"
+                    }
+                ],
+                q2: [
+                    {
+                        title: "Autonomous Audit Systems",
+                        description: "Fully automated audit procedures with minimal human intervention",
+                        status: "planned",
+                        category: "Automation",
+                        date: "Jan 31"
+                    },
+                    {
+                        title: "Digital Twin Architecture",
+                        description: "Digital twins of client businesses for scenario planning and risk modeling",
+                        status: "planned",
+                        category: "Innovation",
+                        date: "Feb 28"
+                    },
+                    {
+                        title: "Quantum Computing Pilots",
+                        description: "Quantum computing applications for complex financial modeling",
+                        status: "planned",
+                        category: "Innovation",
+                        date: "Mar 15"
+                    }
+                ],
+                q3: [
+                    {
+                        title: "Global Market Intelligence",
+                        description: "AI-powered global market analysis and competitive intelligence platform",
+                        status: "planned",
+                        category: "Analytics",
+                        date: "Apr 30"
+                    },
+                    {
+                        title: "Voice-Activated Services",
+                        description: "Voice interfaces for hands-free interaction with all business systems",
+                        status: "planned",
+                        category: "Client Experience",
+                        date: "May 31"
+                    },
+                    {
+                        title: "Continuous Compliance AI",
+                        description: "Real-time compliance monitoring with automatic regulation updates",
+                        status: "planned",
+                        category: "Compliance",
+                        date: "Jun 15"
+                    }
+                ],
+                q4: [
+                    {
+                        title: "Industry 5.0 Platform",
+                        description: "Next-generation platform integrating human creativity with AI capabilities",
+                        status: "planned",
+                        category: "Innovation",
+                        date: "Jul 31"
+                    },
+                    {
+                        title: "Predictive Market Models",
+                        description: "Advanced algorithms for market prediction and economic forecasting",
+                        status: "planned",
+                        category: "Analytics",
+                        date: "Aug 30"
+                    },
+                    {
+                        title: "Carbon Neutral Operations",
+                        description: "Complete carbon-neutral IT infrastructure and green technology adoption",
+                        status: "planned",
+                        category: "Sustainability",
+                        date: "Sep 15"
+                    }
+                ]
+            }
+        };
+
+        const milestones = [
+            {
+                title: "Digital Foundation Complete",
+                description: "Establish comprehensive digital infrastructure and core automation capabilities",
+                quarter: "Q2 FY26",
+                achieved: false,
+                date: "Mar 31, 2026",
+                year: "FY 2026"
+            },
+            {
+                title: "Client Experience Transformation",
+                description: "Launch next-generation client portal and mobile-first engagement platform",
+                quarter: "Q4 FY26",
+                achieved: false,
+                date: "Sep 30, 2026",
+                year: "FY 2026"
+            },
+            {
+                title: "AI-Powered Services Launch",
+                description: "Deploy machine learning and AI capabilities across all service lines",
+                quarter: "Q2 FY27",
+                achieved: false,
+                date: "Mar 31, 2027",
+                year: "FY 2027"
+            },
+            {
+                title: "Advanced Analytics Platform",
+                description: "Establish predictive analytics and business intelligence leadership",
+                quarter: "Q4 FY27",
+                achieved: false,
+                date: "Sep 30, 2027",
+                year: "FY 2027"
+            },
+            {
+                title: "Innovation Leadership",
+                description: "Achieve market leadership in professional services technology innovation",
+                quarter: "Q2 FY28",
+                achieved: false,
+                date: "Mar 31, 2028",
+                year: "FY 2028"
+            },
+            {
+                title: "Sustainable Future Operations",
+                description: "Complete transformation to carbon-neutral, fully automated operations",
+                quarter: "Q4 FY28",
+                achieved: false,
+                date: "Sep 30, 2028",
+                year: "FY 2028"
+            }
+        ];
+
+        // Helper functions
+        function createRoadmapItem(item, quarter) {
+            return `
+                <div class="roadmap-item">
+                    <div class="roadmap-item-header">
+                        <div>
+                            <div class="roadmap-item-title">${item.title}</div>
+                            <span class="badge badge-${item.status}">${item.status}</span>
+                        </div>
+                    </div>
+                    <div class="roadmap-item-description">${item.description}</div>
+                    <div class="roadmap-item-footer">
+                        <span>${item.category}</span>
+                        <span>${item.date}</span>
+                    </div>
+                </div>
+            `;
+        }
+
+        function createQuarterSection(quarter, year, items) {
+            return `
+                <div class="quarter-section">
+                    <div class="quarter-header">
+                        <div class="icon">${icons.calendar}</div>
+                        <span class="quarter-title">${quarter} ${year}</span>
+                        <span class="badge badge-upcoming">Upcoming</span>
+                    </div>
+                    <div class="quarter-items">
+                        ${items.map(item => createRoadmapItem(item, quarter)).join('')}
+                    </div>
+                </div>
+            `;
+        }
+
+        function createYearSection(year, title, description, quarters) {
+            return `
+                <div class="year-section">
+                    <div class="year-header">
+                        <div class="year-title">${year}</div>
+                        <div class="year-subtitle">${title}</div>
+                        <div class="year-description">${description}</div>
+                    </div>
+                    ${quarters}
+                </div>
+            `;
+        }
+
+        function createMilestone(milestone) {
+            return `
+                <div class="milestone">
+                    <div class="milestone-header">
+                        <div class="milestone-icon">
+                            <div class="icon text-green-600">${icons.target}</div>
+                        </div>
+                        <div class="milestone-title">${milestone.title}</div>
+                    </div>
+                    <div class="milestone-description">${milestone.description}</div>
+                    <div class="milestone-footer">
+                        <span class="milestone-quarter">${milestone.quarter}</span>
+                        <span class="text-muted-foreground">${milestone.date}</span>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Populate milestones
+        function populateMilestones() {
+            const container = document.getElementById('milestones-container');
+            container.innerHTML = milestones.map(createMilestone).join('');
+        }
+
+        // Populate roadmap
+        function populateRoadmap() {
+            const container = document.getElementById('roadmap-container');
+            
+            // FY 2026
+            const fy2026Quarters = [
+                createQuarterSection('Q1', '2026', roadmapData.fy2026.q1),
+                createQuarterSection('Q2', '2026', roadmapData.fy2026.q2),
+                createQuarterSection('Q3', '2026', roadmapData.fy2026.q3),
+                createQuarterSection('Q4', '2026', roadmapData.fy2026.q4)
+            ].join('');
+
+            // FY 2027
+            const fy2027Quarters = [
+                createQuarterSection('Q1', '2027', roadmapData.fy2027.q1),
+                createQuarterSection('Q2', '2027', roadmapData.fy2027.q2),
+                createQuarterSection('Q3', '2027', roadmapData.fy2027.q3),
+                createQuarterSection('Q4', '2027', roadmapData.fy2027.q4)
+            ].join('');
+
+            // FY 2028
+            const fy2028Quarters = [
+                createQuarterSection('Q1', '2028', roadmapData.fy2028.q1),
+                createQuarterSection('Q2', '2028', roadmapData.fy2028.q2),
+                createQuarterSection('Q3', '2028', roadmapData.fy2028.q3),
+                createQuarterSection('Q4', '2028', roadmapData.fy2028.q4)
+            ].join('');
+
+            const yearSections = [
+                createYearSection(
+                    'FY 2026',
+                    'Digital Foundation & Core Automation',
+                    'Establishing robust digital infrastructure, implementing core automation capabilities, and modernizing client-facing systems to support accelerated growth.',
+                    fy2026Quarters
+                ),
+                createYearSection(
+                    'FY 2027',
+                    'AI Integration & Advanced Capabilities',
+                    'Deploying artificial intelligence across all service lines, implementing advanced analytics, and establishing next-generation client engagement platforms.',
+                    fy2027Quarters
+                ),
+                createYearSection(
+                    'FY 2028',
+                    'Innovation Leadership & Market Dominance',
+                    'Pioneering breakthrough technologies, achieving carbon-neutral operations, and establishing market leadership through cutting-edge innovation.',
+                    fy2028Quarters
+                )
+            ];
+
+            container.innerHTML = yearSections.join('');
+        }
+
+        // Initialize the page
+        document.addEventListener('DOMContentLoaded', function() {
+            populateMilestones();
+            populateRoadmap();
+        });
+    </script>
+</body>
+</html>
