@@ -116,7 +116,7 @@
         .text-blue-600 { color: #2563eb; }
         .text-orange-600 { color: #ea580c; }
 
-        .bg-primary\\/10 {
+        .bg-primary-10 {
             background-color: rgba(59, 130, 246, 0.1);
         }
 
@@ -403,6 +403,206 @@
             text-align: center;
             color: #64748b;
         }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(4px);
+        }
+
+        .modal-content {
+            background-color: white;
+            margin: 2% auto;
+            padding: 0;
+            border-radius: 1rem;
+            width: 90%;
+            max-width: 1200px;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            animation: modalSlideIn 0.3s ease-out;
+        }
+
+        @keyframes modalSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-50px) scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .modal-header {
+            background: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 1rem 1rem 0 0;
+            position: relative;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+        }
+
+        .modal-close:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(1.1);
+        }
+
+        .modal-title {
+            font-size: 1.875rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .modal-subtitle {
+            font-size: 1.125rem;
+            opacity: 0.9;
+            margin-bottom: 1rem;
+        }
+
+        .modal-body {
+            padding: 2rem;
+        }
+
+        .architecture-section {
+            margin-bottom: 2rem;
+        }
+
+        .architecture-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #1e40af;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #e2e8f0;
+        }
+
+        .architecture-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .architecture-card {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            transition: all 0.2s;
+        }
+
+        .architecture-card:hover {
+            border-color: #3b82f6;
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.15);
+        }
+
+        .architecture-card-title {
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 0.5rem;
+        }
+
+        .architecture-card-description {
+            color: #64748b;
+            font-size: 0.875rem;
+            line-height: 1.5;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .tech-tag {
+            background: #dbeafe;
+            color: #1e40af;
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.375rem;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0.75rem;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #e2e8f0;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2rem;
+            padding-left: 2rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -0.5rem;
+            top: 0.25rem;
+            width: 1rem;
+            height: 1rem;
+            background: #3b82f6;
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 0 0 3px #e2e8f0;
+        }
+
+        .timeline-title {
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 0.25rem;
+        }
+
+        .timeline-description {
+            color: #64748b;
+            font-size: 0.875rem;
+        }
+
+        .clickable {
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .clickable:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(59, 130, 246, 0.15);
+        }
     </style>
 </head>
 <body>
@@ -410,7 +610,7 @@
         <!-- Header -->
         <div class="text-center mb-12">
             <div class="flex justify-center mb-4">
-                <div class="p-3 bg-primary/10 rounded-full">
+                <div class="p-3 bg-primary-10 rounded-full">
                     <div class="icon-lg text-primary">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/>
@@ -526,6 +726,20 @@
                 This three-year strategy roadmap aligns with CohnReznick's Apax Funds investment objectives and growth targets. 
                 Executive steering committee reviews progress quarterly with annual strategic plan updates. Last updated: September 2025
             </p>
+        </div>
+    </div>
+
+    <!-- Architecture Modal -->
+    <div id="architectureModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button class="modal-close" onclick="closeModal()">&times;</button>
+                <h2 class="modal-title" id="modalTitle">Platform Architecture</h2>
+                <p class="modal-subtitle" id="modalSubtitle">Detailed technical architecture and implementation plan</p>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- Architecture content will be populated by JavaScript -->
+            </div>
         </div>
     </div>
 
@@ -873,10 +1087,206 @@
             }
         ];
 
+        // Architecture data for each initiative
+        const architectureData = {
+            "Client Portal 3.0 Launch": {
+                overview: "Next-generation client portal with real-time collaboration and mobile-first experience",
+                components: [
+                    {
+                        title: "Frontend Architecture",
+                        description: "React-based SPA with TypeScript, responsive design, and progressive web app capabilities",
+                        tech: ["React 18", "TypeScript", "Next.js", "Tailwind CSS", "PWA"]
+                    },
+                    {
+                        title: "Backend Services",
+                        description: "Microservices architecture with API Gateway, authentication, and real-time communication",
+                        tech: ["Node.js", "Express", "GraphQL", "WebSocket", "Redis"]
+                    },
+                    {
+                        title: "Database Layer",
+                        description: "Multi-tenant database design with data encryption and backup strategies",
+                        tech: ["PostgreSQL", "MongoDB", "Redis Cache", "AWS RDS"]
+                    },
+                    {
+                        title: "Infrastructure",
+                        description: "Cloud-native deployment with auto-scaling, CDN, and monitoring",
+                        tech: ["AWS", "Docker", "Kubernetes", "CloudFront", "CloudWatch"]
+                    }
+                ],
+                timeline: [
+                    { phase: "Planning & Design", duration: "2 weeks", description: "Requirements gathering, UI/UX design, architecture planning" },
+                    { phase: "Development Sprint 1", duration: "3 weeks", description: "Core authentication, user management, basic portal structure" },
+                    { phase: "Development Sprint 2", duration: "3 weeks", description: "Real-time features, mobile optimization, API integration" },
+                    { phase: "Testing & QA", duration: "2 weeks", description: "Comprehensive testing, security audit, performance optimization" },
+                    { phase: "Deployment & Launch", duration: "1 week", description: "Production deployment, monitoring setup, user training" }
+                ]
+            },
+            "Cloud Infrastructure Expansion": {
+                overview: "Multi-cloud architecture supporting 100% growth capacity with disaster recovery",
+                components: [
+                    {
+                        title: "Primary Cloud (AWS)",
+                        description: "Main production environment with auto-scaling groups and load balancers",
+                        tech: ["EC2", "EKS", "RDS", "S3", "CloudFormation"]
+                    },
+                    {
+                        title: "Secondary Cloud (Azure)",
+                        description: "Disaster recovery and backup environment with cross-region replication",
+                        tech: ["Azure VMs", "AKS", "Azure SQL", "Blob Storage", "ARM Templates"]
+                    },
+                    {
+                        title: "Networking",
+                        description: "Hybrid cloud connectivity with VPN, direct connect, and traffic management",
+                        tech: ["VPC", "Transit Gateway", "Route 53", "CloudFront", "WAF"]
+                    },
+                    {
+                        title: "Monitoring & Security",
+                        description: "Comprehensive monitoring, logging, and security compliance framework",
+                        tech: ["CloudWatch", "Splunk", "GuardDuty", "Config", "CloudTrail"]
+                    }
+                ],
+                timeline: [
+                    { phase: "Assessment & Planning", duration: "3 weeks", description: "Current infrastructure audit, capacity planning, architecture design" },
+                    { phase: "Primary Cloud Setup", duration: "4 weeks", description: "AWS environment setup, networking, security groups configuration" },
+                    { phase: "Secondary Cloud Setup", duration: "3 weeks", description: "Azure environment setup, cross-cloud connectivity, replication setup" },
+                    { phase: "Migration & Testing", duration: "4 weeks", description: "Application migration, disaster recovery testing, performance validation" },
+                    { phase: "Go-Live & Optimization", duration: "2 weeks", description: "Production cutover, monitoring setup, performance tuning" }
+                ]
+            },
+            "Zero Trust Security Implementation": {
+                overview: "Advanced identity management and zero trust architecture deployment",
+                components: [
+                    {
+                        title: "Identity & Access Management",
+                        description: "Multi-factor authentication, single sign-on, and privileged access management",
+                        tech: ["Okta", "Azure AD", "PAM", "RBAC", "SAML/OAuth"]
+                    },
+                    {
+                        title: "Network Security",
+                        description: "Micro-segmentation, software-defined perimeter, and network monitoring",
+                        tech: ["Zscaler", "Cisco ACI", "Palo Alto", "Fortinet", "SD-WAN"]
+                    },
+                    {
+                        title: "Data Protection",
+                        description: "Data encryption, DLP, and data classification with automated compliance",
+                        tech: ["Vault", "Vormetric", "Symantec DLP", "Azure Information Protection"]
+                    },
+                    {
+                        title: "Security Operations",
+                        description: "SIEM, SOAR, threat hunting, and incident response automation",
+                        tech: ["Splunk", "QRadar", "Phantom", "CrowdStrike", "Sentinel"]
+                    }
+                ],
+                timeline: [
+                    { phase: "Security Assessment", duration: "2 weeks", description: "Current security posture analysis, threat modeling, gap identification" },
+                    { phase: "IAM Implementation", duration: "3 weeks", description: "Identity provider setup, MFA rollout, access policies configuration" },
+                    { phase: "Network Segmentation", duration: "4 weeks", description: "Micro-segmentation implementation, firewall rules, traffic analysis" },
+                    { phase: "Data Protection", duration: "3 weeks", description: "Encryption implementation, DLP deployment, data classification" },
+                    { phase: "Security Operations", duration: "2 weeks", description: "SIEM setup, monitoring configuration, incident response procedures" }
+                ]
+            },
+            "Audit Automation Suite": {
+                overview: "AI-powered audit procedures reducing manual work by 60%",
+                components: [
+                    {
+                        title: "AI/ML Engine",
+                        description: "Machine learning models for document analysis, anomaly detection, and risk assessment",
+                        tech: ["Python", "TensorFlow", "PyTorch", "scikit-learn", "Pandas"]
+                    },
+                    {
+                        title: "Document Processing",
+                        description: "OCR, NLP, and intelligent document classification and extraction",
+                        tech: ["Tesseract", "spaCy", "NLTK", "Apache Tika", "AWS Textract"]
+                    },
+                    {
+                        title: "Workflow Engine",
+                        description: "Automated audit workflow management with approval chains and notifications",
+                        tech: ["Camunda", "Apache Airflow", "Celery", "Redis", "PostgreSQL"]
+                    },
+                    {
+                        title: "Integration Layer",
+                        description: "APIs and connectors to existing audit tools and client systems",
+                        tech: ["REST APIs", "GraphQL", "OAuth 2.0", "Webhooks", "SFTP"]
+                    }
+                ],
+                timeline: [
+                    { phase: "Requirements & Design", duration: "2 weeks", description: "Audit process analysis, AI model requirements, system architecture design" },
+                    { phase: "AI Model Development", duration: "4 weeks", description: "Training data preparation, model training, validation, and testing" },
+                    { phase: "System Development", duration: "5 weeks", description: "Core system development, API integration, workflow engine implementation" },
+                    { phase: "Testing & Validation", duration: "3 weeks", description: "End-to-end testing, accuracy validation, performance optimization" },
+                    { phase: "Deployment & Training", duration: "2 weeks", description: "Production deployment, user training, monitoring setup" }
+                ]
+            },
+            "Advanced Analytics Platform": {
+                overview: "Real-time business intelligence and predictive analytics for client insights",
+                components: [
+                    {
+                        title: "Data Lake",
+                        description: "Centralized data storage with schema-on-read capabilities and data governance",
+                        tech: ["AWS S3", "Apache Hive", "Apache Spark", "Delta Lake", "AWS Glue"]
+                    },
+                    {
+                        title: "Analytics Engine",
+                        description: "Real-time and batch processing with machine learning capabilities",
+                        tech: ["Apache Spark", "Apache Kafka", "Apache Flink", "MLlib", "Jupyter"]
+                    },
+                    {
+                        title: "Visualization Layer",
+                        description: "Interactive dashboards and self-service analytics tools",
+                        tech: ["Tableau", "Power BI", "D3.js", "React", "WebSocket"]
+                    },
+                    {
+                        title: "Data Pipeline",
+                        description: "ETL/ELT processes with data quality monitoring and lineage tracking",
+                        tech: ["Apache Airflow", "dbt", "Great Expectations", "Apache NiFi", "AWS Kinesis"]
+                    }
+                ],
+                timeline: [
+                    { phase: "Data Architecture", duration: "3 weeks", description: "Data lake design, schema definition, governance framework setup" },
+                    { phase: "Pipeline Development", duration: "4 weeks", description: "ETL pipeline development, data quality checks, monitoring setup" },
+                    { phase: "Analytics Development", duration: "5 weeks", description: "Analytics models, dashboard development, self-service tools" },
+                    { phase: "ML Integration", duration: "3 weeks", description: "Machine learning model integration, predictive analytics features" },
+                    { phase: "Deployment & Training", duration: "2 weeks", description: "Production deployment, user training, documentation" }
+                ]
+            },
+            "Tax Technology Overhaul": {
+                overview: "Cloud-native tax preparation and compliance management system",
+                components: [
+                    {
+                        title: "Core Tax Engine",
+                        description: "Tax calculation engine with multi-jurisdiction support and real-time updates",
+                        tech: ["Java", "Spring Boot", "Microservices", "Redis", "PostgreSQL"]
+                    },
+                    {
+                        title: "Document Management",
+                        description: "Secure document storage, versioning, and collaboration features",
+                        tech: ["AWS S3", "Elasticsearch", "DocumentDB", "AWS Lambda", "S3 Transfer Acceleration"]
+                    },
+                    {
+                        title: "Compliance Engine",
+                        description: "Automated compliance checking and regulatory reporting",
+                        tech: ["Python", "Django", "Celery", "PostgreSQL", "Apache Airflow"]
+                    },
+                    {
+                        title: "Client Portal",
+                        description: "Self-service portal for tax document upload and status tracking",
+                        tech: ["React", "Node.js", "Express", "WebSocket", "OAuth 2.0"]
+                    }
+                ],
+                timeline: [
+                    { phase: "System Analysis", duration: "2 weeks", description: "Current system analysis, requirements gathering, architecture planning" },
+                    { phase: "Core Development", duration: "6 weeks", description: "Tax engine development, database design, API development" },
+                    { phase: "Integration & Testing", duration: "4 weeks", description: "System integration, comprehensive testing, performance optimization" },
+                    { phase: "Migration Planning", duration: "2 weeks", description: "Data migration strategy, cutover planning, rollback procedures" },
+                    { phase: "Deployment & Go-Live", duration: "3 weeks", description: "Staged deployment, user training, production support" }
+                ]
+            }
+        };
+
         // Helper functions
         function createRoadmapItem(item, quarter) {
             return `
-                <div class="roadmap-item">
+                <div class="roadmap-item clickable" onclick="openArchitectureModal('${item.title}')">
                     <div class="roadmap-item-header">
                         <div>
                             <div class="roadmap-item-title">${item.title}</div>
@@ -995,6 +1405,91 @@
 
             container.innerHTML = yearSections.join('');
         }
+
+        // Modal functions
+        function openArchitectureModal(title) {
+            const modal = document.getElementById('architectureModal');
+            const modalTitle = document.getElementById('modalTitle');
+            const modalSubtitle = document.getElementById('modalSubtitle');
+            const modalBody = document.getElementById('modalBody');
+            
+            const data = architectureData[title];
+            if (!data) {
+                // Fallback for items without specific architecture data
+                modalTitle.textContent = title;
+                modalSubtitle.textContent = 'Platform Architecture Details';
+                modalBody.innerHTML = `
+                    <div class="architecture-section">
+                        <h3 class="architecture-title">Overview</h3>
+                        <p>Detailed architecture information for this initiative will be available soon. This section will include technical specifications, implementation timeline, and technology stack details.</p>
+                    </div>
+                `;
+            } else {
+                modalTitle.textContent = title;
+                modalSubtitle.textContent = data.overview;
+                
+                let componentsHtml = '';
+                data.components.forEach(component => {
+                    let techTags = component.tech.map(tech => `<span class="tech-tag">${tech}</span>`).join('');
+                    componentsHtml += `
+                        <div class="architecture-card">
+                            <div class="architecture-card-title">${component.title}</div>
+                            <div class="architecture-card-description">${component.description}</div>
+                            <div class="tech-stack">${techTags}</div>
+                        </div>
+                    `;
+                });
+                
+                let timelineHtml = '';
+                data.timeline.forEach(item => {
+                    timelineHtml += `
+                        <div class="timeline-item">
+                            <div class="timeline-title">${item.phase} <span style="color: #3b82f6; font-weight: 500;">(${item.duration})</span></div>
+                            <div class="timeline-description">${item.description}</div>
+                        </div>
+                    `;
+                });
+                
+                modalBody.innerHTML = `
+                    <div class="architecture-section">
+                        <h3 class="architecture-title">Architecture Components</h3>
+                        <div class="architecture-grid">
+                            ${componentsHtml}
+                        </div>
+                    </div>
+                    <div class="architecture-section">
+                        <h3 class="architecture-title">Implementation Timeline</h3>
+                        <div class="timeline">
+                            ${timelineHtml}
+                        </div>
+                    </div>
+                `;
+            }
+            
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeModal() {
+            const modal = document.getElementById('architectureModal');
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+        
+        // Close modal when clicking outside of it
+        window.onclick = function(event) {
+            const modal = document.getElementById('architectureModal');
+            if (event.target === modal) {
+                closeModal();
+            }
+        }
+        
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeModal();
+            }
+        });
 
         // Initialize the page
         document.addEventListener('DOMContentLoaded', function() {
